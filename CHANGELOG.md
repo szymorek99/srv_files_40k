@@ -1,0 +1,2 @@
+- utworzono mirror mob_proto i item_proto z bazy do serwera. (po zmianie rekordu w bazie, automatycznie zostanie zsynchroznizowane to z Tym co mamy na serwerze w mob_proto i item_proto),
+- dodano czytanie z tabeli venum id 
