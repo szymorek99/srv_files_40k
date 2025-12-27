@@ -179,7 +179,7 @@ bool CClientManager::InitializeMobTable()
         "FROM mob_proto%s ORDER BY vnum",
         g_stLocaleNameColumn.c_str(), GetTablePostfix());
  
-    std::auto_ptr<SQLMsg> pkMsg(CDBManager::instance().DirectQuery(query));
+    std::unique_ptr<SQLMsg> pkMsg(CDBManager::instance().DirectQuery(query));
     SQLResult * pRes = pkMsg->Get();
  
     if (!pRes->uiNumRows)
@@ -423,7 +423,7 @@ bool CClientManager::InitializeItemTable()
         "FROM item_proto%s ORDER BY vnum",
         g_stLocaleNameColumn.c_str(), GetTablePostfix());
  
-    std::auto_ptr<SQLMsg> pkMsg(CDBManager::instance().DirectQuery(query));
+    std::unique_ptr<SQLMsg> pkMsg(CDBManager::instance().DirectQuery(query));
     SQLResult * pRes = pkMsg->Get();
  
     if (!pRes->uiNumRows)
